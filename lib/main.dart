@@ -9,7 +9,7 @@ class MeuAplicativo extends StatelessWidget {
     return MaterialApp(
       home: PrimeiraRota(),
       routes: {
-        RotaGenerica.caminhoDaRota: (context) => RotaGenerica(),
+        RotaConversao.caminhoDaRota: (context) => RotaConversao(),
       },
     );
   }
@@ -38,7 +38,7 @@ class PrimeiraRota extends StatelessWidget {
                     icon: Icon(Icons.clear),
                   ),
                   border: OutlineInputBorder(),
-                  labelText: 'Temperate em graus celsius'),
+                  labelText: 'Temperatura em graus celsius'),
             ),
             margin: EdgeInsets.all(10),
           ),
@@ -49,7 +49,7 @@ class PrimeiraRota extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(
                   context,
-                  RotaGenerica.caminhoDaRota,
+                  RotaConversao.caminhoDaRota,
                   arguments: ArgumentosDaRota(
                     'Graus Fahrenheit',
                     double.parse(temperaturaCelsiusController.text)
@@ -65,7 +65,7 @@ class PrimeiraRota extends StatelessWidget {
   }
 }
 
-class RotaGenerica extends StatelessWidget {
+class RotaConversao extends StatelessWidget {
   static const caminhoDaRota = '/conversao';
 
   @override
